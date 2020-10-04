@@ -1,4 +1,7 @@
   .header{
       background-color: darkblue;
-      color: lightcoral;
+      color: #f08080;
+      padding: 1%;
+      margin-bottom: 10px;
+      flex-flow: row wrap;
   }
