@@ -4,4 +4,6 @@
       padding: 1%;
       margin-bottom: 10px;
       flex-flow: row wrap;
+      align-items: center;
+      justify-content: center;
   }
