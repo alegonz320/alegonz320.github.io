@@ -1,0 +1,14 @@
+.header{
+    background-color: darkblue;
+    color: #f08080;
+    padding: 0%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+.main{
+  max-width: 960px;
+  display: flex;
+}
