@@ -1,7 +1,7 @@
 .header{
     background-color: darkblue;
     color: #f08080;
-    padding: 0%;
+    padding: 15px;
     margin-bottom: 15px;
     display: flex;
     flex-flow: row wrap;
