@@ -12,3 +12,15 @@
   max-width: 960px;
   display: flex;
 }
+
+.wrapper .container > div{
+    display: flex;
+}
+
+.container{
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
