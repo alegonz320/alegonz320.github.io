@@ -1,8 +1,9 @@
   .header{
       background-color: darkblue;
       color: #f08080;
-      padding: 1%;
+      padding: 0%;
       margin-bottom: 10px;
+      display: flex;
       flex-flow: row wrap;
       align-items: center;
       justify-content: center;
