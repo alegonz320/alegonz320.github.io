@@ -7,39 +7,17 @@
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
+    
 }
 .main{
   max-width: 960px;
   display: flex;
 }
 
-.wrapper .container > div{
+.wrapper .container{
     display: flex;
+    size: 0 1 auto;
     justify-content: space-between;
-}
-
-h2, p, ol {
-    font-family: 'Roboto Condensed', sans-serif;
-}
-
-li {
-    font-family: 'Lobster', cursive;
-}
-
-h1 {
-    font-size: 2rem;
-    text-align: left;
-    font-weight: 800;
-}
-  
-h2 {
-    font-size: 1rem;
-    text-align: left;
-    font-weight: 600;
-}
-  
-p, li {
-    font-size: 1rem;
 }
 
 .figure{
@@ -50,16 +28,9 @@ p, li {
     border-radius: 4px;
 }
 
-figure img{
-    display: block;
-    margin: 0 auto
-}
 
-.header img {
-    display: block;
-    height: 250px;
-    padding-top: 20.15px;
-    border-radius: 4px;
+.header img{
+max-width: 354px;
 }
 
 .container{
@@ -68,5 +39,11 @@ figure img{
     flex-wrap: wrap;
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-between;
+    column-width: 10em;
+    column-rule: 1px solid rgb(75, 70, 74);
+}
+.container img{
+    border-radius: 4px;
+    border-width: 1px;
 }
