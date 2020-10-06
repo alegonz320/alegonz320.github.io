@@ -6,15 +6,17 @@
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    font-family: 'Oleo Script', cursive;
+    font-family: 'Cinzel Decorative', cursive;
 }
 
 .content{
     display: flex;
-    flex: 0 1 auto;
+    flex: 2 0px;
+    max-width: 960px;
+    box-flex: right;
 }
 .content h2{
-    font-family: 'Oleo Script', cursive;
+    font-family: 'Cinzel Decorative', cursive;
 }
 
 
@@ -44,6 +46,7 @@ max-width: 354px;
 }
 
 body{
+    font-family: 'Roboto Condensed', sans-serif;
     background-color: lightblue;
 }
 
@@ -51,4 +54,5 @@ body{
     flex: 1 0 auto;
     background-color: lightgray;
     margin-right: 0px;
+    box-flex: left;
 }
