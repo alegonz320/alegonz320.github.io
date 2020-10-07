@@ -49,10 +49,19 @@ body{
     font-family: 'Roboto Condensed', sans-serif;
     background-color: lightblue;
 }
-
+@media screen and (max-width: 900px){
 .figure{
+    display: block;
     flex: 1 0 auto;
+    justify-content: space-evenly;
     background-color: lightgray;
     margin-right: 0px;
-    box-flex: left;
+}
+}
+.figure{
+    display: block;
+    flex: 0 1 auto;
+    justify-content: space-evenly;
+    background-color: lightgray;
+    margin-right: 15px;
 }
