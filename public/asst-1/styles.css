@@ -13,6 +13,11 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    background-color: darkblue;
+}
+
+.header h1{
+    color: lightcoral;
 }
 
 .container{
@@ -34,7 +39,7 @@ body{
     width: 199px;
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 1000px){
     .image{
         flex: 1 0 auto;
         margin-right: 0px;
@@ -43,4 +48,8 @@ body{
     .container{
         justify-content: center;
     }
+}
+
+.content{
+    max-width: 960px;
 }
