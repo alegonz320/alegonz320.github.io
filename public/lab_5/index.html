@@ -62,7 +62,7 @@
             <button type = "submit" id = "button" name = "form button">Submit</button>
         </li>
         <li>
-            <button type = "button" onclick = "testFunction()">Activate</button>
+            <button type = "button" onclick = "testFunction()" id = "new-button">Activate</button>
         </li>
     </ul>
 </form>
@@ -77,9 +77,12 @@
     })
     const myHeading = document.querySelector('h1', 'title');
     myHeading.textContent = 'Lab 5 for Marta Gonzalez';
-    
+
+    const btn = document.getElementById('new-button');
+    btn.onclick = function(){
     const newcol = 'rgb('+255+','+0+','+0+')';
     document.body.style.background = newcol;
+    }
 }
 </script>
 </body>
