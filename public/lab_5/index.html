@@ -38,7 +38,7 @@
             <textarea rows = "5" cols = "33" id = "message" name = "message" placeholder = "Enter message here">Message</textarea>
         </li>
         <li>
-            <p>Age</p>
+            <p class = "checkbox-list-label">Age</p>
             <ul class = "flex-inner">
                 <li>
                     <input type = "checkbox" id = "eighteen-to-thirtyfive" name = "checkbox">
@@ -51,10 +51,6 @@
                 <li>
                     <input type = "checkbox" id = "fifty-to-sixtyfive" name = "checkbox">
                     <label for = "fifty-to-sixtyfive">50-65</label>
-                </li>
-                <li>
-                    <input type = "checkbox" id = "sixtyfive-to-eighty" name = "checkbox">
-                    <label for = "sixtyfive-to-eighty">65-80</label>
                 </li>
             </ul>
         </li>
@@ -79,10 +75,13 @@
     myHeading.textContent = 'Lab 5 for Marta Gonzalez';
 
     const btn = document.getElementById('new-button');
-    btn.onclick = function(){
     const newcol = 'rgb('+255+','+0+','+0+')';
-    document.body.style.background = newcol;
-    }
+    btn.onclick = document.body.style.background = newcol;
+
+    const check = document.querySelector('p');
+    check.textContent = "Fruits";
+
+    
 }
 </script>
 </body>
