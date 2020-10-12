@@ -70,18 +70,22 @@
     .then((response) => response.text())
     .then((response) => {
          console.log(response);
+        const myHeader = document.querySelector('h1','title');
+        myHeader.innerText = "Lab 5 for Marta Gonzalez"
+         const btn = document.getElementById('new-button');
+        const newcol = 'rgb('+255+','+0+','+0+')';
+        document.body.style.background = newcol;
+        const check = document.querySelector('p');
+        check.textContent = "Fruits";
+        document.querySelector('.flex-outer').style.margin = "0 auto";
+        const labels = document.querySelectorAll('.flex-inner label');
+        const fruit = ['Apple', 'Orange', 'Banana'];
+        labels.forEach((l , i) => {
+        const one = l.innerText;
+        l.innerText = fruit[i];
+    });
     })
-    const myHeading = document.querySelector('h1', 'title');
-    myHeading.textContent = 'Lab 5 for Marta Gonzalez';
-
-    const btn = document.getElementById('new-button');
-    const newcol = 'rgb('+255+','+0+','+0+')';
-    document.body.style.background = newcol;
-
-    const check = document.querySelector('p');
-    check.textContent = "Fruits";
-
-    const array = ['Apple', 'Orange', 'Banana'];
+    
     
 }
 </script>
