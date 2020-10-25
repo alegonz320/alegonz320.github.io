@@ -16,10 +16,8 @@ function sortFunction(a, b, key) {
   return 0;
 }
 
-function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive 
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * Math.floor(max) - Math.floor(min)) + Math.floor(min); //The maximum is inclusive and the minimum is inclusive 
 }
 
 document.body.addEventListener('submit', async (e) => {
@@ -34,27 +32,26 @@ document.body.addEventListener('submit', async (e) => {
   })
     .then((fromServer) => fromServer.json())
     .then((fromServer) => {
-    if(document.querySelector('.flex-inner')){
-      document.querySelector('.flex-inner').remove();
-    }
+      if(document.querySelector('.flex-inner')){
+        document.querySelector('.flex-inner').remove();
+      }
     const contArr = range(10);
-    const contlArr = contArr.map(()=>{
-      const contNum = getRandomIntInclusive(0, 242);
-      return fromServer(contNum);
+    const contlArr = contArr.map(() => {
+      const contNum = getRandomInt(0, 243);
+      return fromServer[contNum];
     });
-    const rvList = contlArr.sort((a,b)=>sortFunction(b,a,'name'));
-    const ol = document.createElement('ol');
-    ol.className = 'flex-inner';
-    const frm = document.querySelector('form');
-    frm.prepend(ol);
+    const rvList = contlArr.sort((a,b) => sortFunction(b,a,'name'));
 
-    rvList.forEach((country,i)=>{
+    const ol = document.createElement('ol');
+    ol.className = "flex-inner";
+    $('form').prepend(ol);
+
+    rvList.forEach((el,i)=>{
       const li = document.createElement('li');
-      $(li).append('<input type = "checkbox" value=' +country.code+ 'id =' +country.code+'name = "countries" />');
-      $(li).append('<label for =' +country.code+ '>' + country.name + '</label>');
+      $(li).append('<input type = "checkbox" value = ${el.code} id = ${el.code}/>');
+      $(li).append('<label for = ${el.code}>${el.name}</label>');
       $(ol).append(li);
     });
-    console.log('fromServer', fromServer);
     })
     .catch((err) => console.log(err));
 });
