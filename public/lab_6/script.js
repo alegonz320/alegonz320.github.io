@@ -17,7 +17,7 @@ function sortFunction(a, b, key) {
 }
 
 function getRandomInt(min, max) {
-  return Math.floor(Math.random() * Math.floor(max) - Math.floor(min)) + Math.floor(min); //The maximum is inclusive and the minimum is inclusive 
+  return Math.floor(Math.random() * (max-min+1) + min); //The maximum is inclusive and the minimum is inclusive 
 }
 
 document.body.addEventListener('submit', async (e) => {
@@ -46,12 +46,13 @@ document.body.addEventListener('submit', async (e) => {
     ol.className = "flex-inner";
     $('form').prepend(ol);
 
-    rvList.forEach((el,i)=>{
+    rvList.forEach((el, i)=>{
       const li = document.createElement('li');
-      $(li).append('<input type = "checkbox" value = ${el.code} id = ${el.code}/>');
-      $(li).append('<label for = ${el.code}>${el.name}</label>');
+      $(li).append('<input type = "checkbox" value =' +el.code+ 'id =' + el.code + '/>');
+      $(li).append('<label for=' + el.code+ '>' +el.name+ '</label>')
       $(ol).append(li);
     });
+    console.log('fromServer', fromServer);
     })
     .catch((err) => console.log(err));
 });
