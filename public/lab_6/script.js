@@ -16,6 +16,12 @@ function sortFunction(a, b, key) {
   return 0;
 }
 
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive 
+}
+
 document.body.addEventListener('submit', async (e) => {
   e.preventDefault(); // this stops whatever the browser wanted to do itself.
   const form = $(e.target).serializeArray(); // here we're using jQuery to serialize the form
@@ -28,21 +34,27 @@ document.body.addEventListener('submit', async (e) => {
   })
     .then((fromServer) => fromServer.json())
     .then((fromServer) => {
-      // You're going to do your lab work in here. Replace this comment.
-     // console.table(countries);
-     // const flexList = document.getElementsByClassName('.flex-inner');
-     // for (i in range(10)){
-      //  const rando = flexList.map(Math.floor(Math.random));
-       // flexList[i] = rando;
-       // for (j in range(flexList.length)){
-       //   if(rando = flexList[j]){
-        //    i--;
-        //  }
-      //  }
+    if(document.querySelector('.flex-inner')){
+      document.querySelector('.flex-inner').remove();
+    }
+    const contArr = range(10);
+    const contlArr = contArr.map(()=>{
+      const contNum = getRandomIntInclusive(0, 242);
+      return fromServer(contNum);
+    });
+    const rvList = contlArr.sort((a,b)=>sortFunction(b,a,'name'));
+    const ol = document.createElement('ol');
+    ol.className = 'flex-inner';
+    const frm = document.querySelector('form');
+    frm.prepend(ol);
 
-    //  }
-    //  $ ("button").prepend($("flexList"));
-      console.log('fromServer', fromServer);
+    rvList.forEach((country,i)=>{
+      const li = document.createElement('li');
+      $(li).append('<input type = "checkbox" value=' +country.code+ 'id =' +country.code+'name = "countries" />');
+      $(li).append('<label for =' +country.code+ '>' + country.name + '</label>');
+      $(ol).append(li);
+    });
+    console.log('fromServer', fromServer);
     })
     .catch((err) => console.log(err));
 });
