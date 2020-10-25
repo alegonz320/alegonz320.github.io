@@ -49,10 +49,9 @@ document.body.addEventListener('submit', async (e) => {
     rvList.forEach((el, i)=>{
       const li = document.createElement('li');
       $(li).append('<input type = "checkbox" value =' +el.code+ 'id =' + el.code + '/>');
-      $(li).append('<label for=' + el.code+ '>' +el.name+ '</label>')
+      $(li).append('<label for=' + el.code+ '>' +el.name+ '</label>');
       $(ol).append(li);
     });
-    console.log('fromServer', fromServer);
     })
     .catch((err) => console.log(err));
 });
